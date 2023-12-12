@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     "An application to maximize the peace and tranquility in your life with a peaceful garden full of peaceful sounds.",
 };
 
+declare global {
+  interface Window {
+    datalayer: Record<string, any>;
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -24,6 +30,19 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-GJ11E50SLP"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: ` window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());=
+          gtag('config', 'G-GJ11E50SLP');
+          `,
+        }}
+      ></script>
       <body className={inter.className}>{children}</body>
     </html>
   );
