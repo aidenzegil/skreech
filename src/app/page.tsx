@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <main className={styles.main}>
+    <main className={s.container}>
       <button
         className={panikClicks === 0 ? s.temptingButton : s.panikButton}
         onClick={handleClick}
