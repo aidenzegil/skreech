@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Peace and tranquility",
   description:
-    "An application to maximize the peace and tranquility in your live with a peaceful garden full of peaceful sounds.",
+    "An application to maximize the peace and tranquility in your life with a peaceful garden full of peaceful sounds.",
 };
 
 export default function RootLayout({
