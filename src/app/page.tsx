@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import s from "./page.module.scss";
 
@@ -34,15 +34,10 @@ export default function Home() {
         return "This button has not and will never do anything";
     }
   })();
+  const audioElement = document.getElementById("scream") as HTMLAudioElement;
 
-  const handleStopClick = () => {
-    if (panikClicks === 0) {
-      const audioElement = document.getElementById(
-        "scream"
-      ) as HTMLAudioElement;
-      document.body.addEventListener("click", () => audioElement.play());
-    }
-
+  const handleClick = () => {
+    (document.getElementById("scream") as HTMLAudioElement).play();
     setPanikClicks(panikClicks + 1);
   };
 
@@ -50,13 +45,15 @@ export default function Home() {
     <main className={styles.main}>
       <button
         className={panikClicks === 0 ? s.temptingButton : s.panikButton}
-        onClick={handleStopClick}
+        onClick={handleClick}
       >
         {buttonText}
       </button>
       <audio
         ref={ref}
         loop
+        autoPlay
+        controls
         id="scream"
         src="/Hysterical_Goat.mp3"
         style={{ display: "hidden" }}
