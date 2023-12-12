@@ -40,7 +40,7 @@ export default function Home() {
       const audioElement = document.getElementById(
         "scream"
       ) as HTMLAudioElement;
-      document.body.addEventListener("mousemove", () => audioElement.play());
+      document.body.addEventListener("click", () => audioElement.play());
     }
 
     setPanikClicks(panikClicks + 1);
