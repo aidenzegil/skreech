@@ -53,7 +53,6 @@ export default function Home() {
         ref={ref}
         loop
         autoPlay
-        controls
         id="scream"
         src="/Hysterical_Goat.mp3"
         style={{ display: "hidden" }}
