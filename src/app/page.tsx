@@ -34,7 +34,6 @@ export default function Home() {
         return "This button has not and will never do anything";
     }
   })();
-  const audioElement = document.getElementById("scream") as HTMLAudioElement;
 
   const handleClick = () => {
     (document.getElementById("scream") as HTMLAudioElement).play();
